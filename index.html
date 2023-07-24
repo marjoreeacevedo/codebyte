@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leer archivo JSON</title>
+</head>
+
+<body>
+    <script>
+        // Utilizando Fetch API para cargar el archivo JSON
+        fetch('datos.json')
+            .then(response => response.json())
+            .then(data => {
+                // El contenido del archivo JSON estará disponible en la variable "data"
+                console.log(data);
+                // Puedes acceder a los valores individuales del JSON de esta manera
+                console.log("Nombre: " + data.nombre);
+                console.log("Edad: " + data.edad);
+                console.log("Ciudad: " + data.ciudad);
+            })
+            .catch(error => console.error('Error al cargar el archivo JSON:', error));
+    </script>
+</body>
+
+</html>
+Enfoque 2: Importar el archivo JSON directamente si ya está incluido en el proyecto:
+
+Supongamos que en tu HTML tienes el siguiente código para incluir el archivo JSON:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leer archivo JSON</title>
+</head>
+
+<body>
+    <script>
+        // Utilizando Fetch API para cargar el archivo JSON
+        fetch('https://coderbyte.com/api/challenges/json/age-counting')
+            .then(response => response.json())
+            .then(data => {
+                // El contenido del archivo JSON estará disponible en la variable "data"
+                console.log(data);
+                // Puedes acceder a los valores individuales del JSON de esta manera
+                // console.log("Nombre: " + data.nombre);
+                // console.log("Edad: " + data.edad);
+                // console.log("Ciudad: " + data.ciudad);
+            })
+            .catch(error => console.error('Error al cargar el archivo JSON:', error));
+    </script>
+</body>
+
+</html>
